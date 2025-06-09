@@ -58,10 +58,10 @@ class FileList{
 	
 
 int main(){
-	// "/Users/chaofang/Documents"
+	std::string root_path =  "/Users/chaofang/Documents";
 	FileList file_list;
 	std::thread th_consume(&FileList::outPut, &file_list);
-	std::future<void> fut = std::async(std::launch::async,&FileList::pushFile, &file_list, "/Users/chaofang/Documents/");
+	std::future<void> fut = std::async(std::launch::async,&FileList::pushFile, &file_list, root_path);
 	fut.wait();
 	file_list.endProduce();
 	th_consume.join();	
