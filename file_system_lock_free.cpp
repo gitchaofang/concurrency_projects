@@ -58,7 +58,6 @@ class FileList{
 	
 
 int main(){
-	// local root_path you want to start with
 	std::string root_path =  "/Users/chaofang/Documents";
 	FileList file_list;
 	std::thread th_consume(&FileList::outPut, &file_list);
